@@ -2,26 +2,26 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import { Button } from "@mui/material";
 
-const RoundButtonStyled = styled(
-  Button,
-  {}
-)(({ theme, width, height }) => ({
-  color: theme.palette.text.primary,
-  fontWeight: "bold",
-  borderRadius: "50px",
-  background: `linear-gradient(45deg, ${theme.palette.primary.alternative}, ${theme.palette.primary.main});`,
-  width: width,
-  height: height,
-}));
+const RoundButtonStyled = styled(Button)(({ theme, color }) => {
+  return `
+  background: linear-gradient(45deg, ${theme.palette[color].alternative}, ${theme.palette[color].main});
+  border-radius: 25px;
+  height: 55px;
+  font-size: 17px;
+`;
+});
 
-export default function RoundButton({
+const RoundButton = ({
+  variant = "contained",
+  color = "primary",
   children,
-  width = "200px",
-  height = "55px",
-}) {
+  ...otherProps
+}) => {
   return (
-    <RoundButtonStyled width={width} height={height} variant="contained">
+    <RoundButtonStyled variant={variant} color={color} {...otherProps}>
       {children}
     </RoundButtonStyled>
   );
-}
+};
+
+export default RoundButton;
