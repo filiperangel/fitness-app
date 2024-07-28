@@ -3,6 +3,8 @@ import { Container } from "@mui/material/";
 import OvalButton from "../../../components/Button/OvalButton";
 import LoginIcon from "@mui/icons-material/Login";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import RoundButton from "../../../components/Button/RoundButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Home = () => {
   return (
@@ -34,6 +36,14 @@ const Home = () => {
         >
           Button
         </OvalButton>
+        <Container sx={{ paddingTop: 2 }}>
+          <RoundButton color="primary">
+            <DeleteIcon />
+          </RoundButton>
+          <RoundButton color="secondary">
+            <ArrowForwardIosIcon />
+          </RoundButton>
+        </Container>
       </Container>
     </Container>
   );
