@@ -68,6 +68,14 @@ const theme = createTheme({
         }),
       },
     },
+    MuiContainer: {
+      styleOverrides: {
+        root: ({ ownerState, theme }) => ({
+          padding: "0px !important",
+          maxWidth: "100% !important",
+        }),
+      },
+    },
   },
 });
 
